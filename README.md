@@ -1,8 +1,10 @@
+[![Build Status](https://travis-ci.org/dennisvandehoef/rubocop-speed.svg?branch=master)](https://travis-ci.org/dennisvandehoef/rubocop-speed)
+
 # Rubocop::Speed
 
-Welcome to your new gem! In this directory, you'll find the files you need to be able to package up your Ruby library into a gem. Put your Ruby code in the file `lib/rubocop/speed`. To experiment with that code, run `bin/console` for an interactive prompt.
+We all love rubocop, but seadly its config is not always good for the execution time of our code.
 
-TODO: Delete this and the text above, and describe your gem
+This gem overrides the default config with the speed optimized options.
 
 ## Installation
 
@@ -22,7 +24,31 @@ Or install it yourself as:
 
 ## Usage
 
-TODO: Write usage instructions here
+You need to tell RuboCop to load the Speed extension. There are three aways to do this:
+
+### RuboCop configuration file
+
+Put this into your `.rubocop.yml`.
+
+```
+require: rubocop-rspec
+```
+
+Now you can run `rubocop` and it will automatically load the RuboCop Speed cops together with the standard cops.
+
+### Command line
+
+```bash
+rubocop --require rubocop-speed
+```
+
+### Rake task
+
+```ruby
+RuboCop::RakeTask.new do |task|
+  task.requires << 'rubocop-speed'
+end
+```
 
 ## Development
 
@@ -32,10 +58,9 @@ To install this gem onto your local machine, run `bundle exec rake install`. To 
 
 ## Contributing
 
-Bug reports and pull requests are welcome on GitHub at https://github.com/[USERNAME]/rubocop-speed. This project is intended to be a safe, welcoming space for collaboration, and contributors are expected to adhere to the [Contributor Covenant](http://contributor-covenant.org) code of conduct.
+Bug reports and pull requests are welcome on GitHub at https://github.com/dennisvdhoef/rubocop-speed. This project is intended to be a safe, welcoming space for collaboration, and contributors are expected to adhere to the [Contributor Covenant](http://contributor-covenant.org) code of conduct.
 
 
 ## License
 
 The gem is available as open source under the terms of the [MIT License](http://opensource.org/licenses/MIT).
-
