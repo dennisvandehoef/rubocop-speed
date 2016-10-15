@@ -1,0 +1,8 @@
+require: rubocop-speed
+
+AllCops:
+  DisplayCopNames: true
+  TargetRubyVersion: 2.2
+
+Style/Documentation:
+  Enabled: false
