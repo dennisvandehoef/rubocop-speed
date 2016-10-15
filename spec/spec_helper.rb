@@ -7,7 +7,9 @@ def fastest(result)
 end
 
 def target_ruby_version
-  @target_ruby_version ||= RuboCop::Config.new.target_ruby_version
+  return @target_ruby_version if @target_ruby_version
+  return @target_ruby_version = ENV['RUBY'].to_f if ENV['RUBY']
+  @target_ruby_version = RuboCop::Config.new.target_ruby_version
 end
 
 puts "Target Ruby Version: #{target_ruby_version}"
