@@ -17,8 +17,6 @@ module RuboCop
     CONFIG_DEFAULT = PROJECT_ROOT.join('config', 'default.yml').freeze
     CONFIG         = YAML.load(CONFIG_DEFAULT.read).freeze
 
-    #private_constant(*constants(false))
-
     Inject.defaults!
   end
 end
