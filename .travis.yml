@@ -8,12 +8,8 @@ matrix:
      - rvm: 2.2.5
      - rvm: 2.3.1
      - rvm: ruby-head
-     - rvm: jruby-9.0.1.0
-       env: JRUBY_OPTS='--debug' # get more accurate coverage data
-     - rvm: rbx-3
   allow_failures:
     - rvm: ruby-head
-    - rvm: rbx-3
   fast_finish: true
 before_install: gem update --remote bundler
 install:
