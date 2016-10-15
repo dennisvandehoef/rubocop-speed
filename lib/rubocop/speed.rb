@@ -9,7 +9,7 @@ require 'rubocop/speed/version'
 require 'rubocop/speed/inject'
 
 # cops
-require 'rubocop/cop/speed/fast_numeric_predicate'
+require 'rubocop/cop/style/numeric_predicate'
 
 module RuboCop
   module Speed
